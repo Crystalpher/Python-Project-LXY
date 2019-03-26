@@ -1,4 +1,4 @@
-# Input the city name part
+# Input GUI Part
 # Read a city's name from the GUI
 import sys
 from PyQt5.QtWidgets import *
@@ -24,7 +24,7 @@ if dlg.exec_():
 dlg.show()
 
 
-# Get part
+# Get Part
 import requests
 import json
 
@@ -35,7 +35,7 @@ r = requests.get(url)
 hjson = json.loads(r.text)
 
 
-# Analysis part
+# Analysis Part
 from Class import Position
 
 # Put the hjson list's data into Class Position
@@ -54,7 +54,7 @@ consider_place = [csdp for csdp in place_list if csdp.judge_stay() == "consider"
 leave_place = [lvp for lvp in place_list if lvp.judge_stay() == "leave"]
 
 
-# Output part
+# Output Part
 # In this part the output information will be showed on the GUI
 # Output livable, unhealthy and dangerous places in this city
 # State the judge standard
